@@ -101,3 +101,87 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Test the Trading Diary (Diário de Trade) application - a pure HTML/CSS/JS application with LocalStorage for data persistence. Test form submission, history management, analysis features, responsiveness, and data persistence."
+
+frontend:
+  - task: "Form Tab - Trade Operation Form"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/public/index.html"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "testing"
+          comment: "Initial testing required - form submission, field validation, asset selector with 'Outro' option, toast notifications, header stats update"
+
+  - task: "History Tab - Trade Cards and Table View"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/public/index.html"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "testing"
+          comment: "Initial testing required - trade display, view switching, filtering, edit/delete functionality"
+
+  - task: "Analysis Tab - Statistics and Insights"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/public/index.html"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "testing"
+          comment: "Initial testing required - statistics calculation, performance analysis, insights generation, time-based analysis"
+
+  - task: "Responsive Design - Mobile Compatibility"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/public/style.css"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "testing"
+          comment: "Initial testing required - mobile viewport testing, navigation adaptation, form responsiveness"
+
+  - task: "LocalStorage Data Persistence"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/public/script.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "testing"
+          comment: "Initial testing required - data persistence after reload, edit/delete operations, data integrity"
+
+metadata:
+  created_by: "testing_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: true
+
+test_plan:
+  current_focus:
+    - "Form Tab - Trade Operation Form"
+    - "History Tab - Trade Cards and Table View"
+    - "Analysis Tab - Statistics and Insights"
+    - "LocalStorage Data Persistence"
+    - "Responsive Design - Mobile Compatibility"
+  stuck_tasks: []
+  test_all: true
+  test_priority: "high_first"
+
+agent_communication:
+    - agent: "testing"
+      message: "Starting comprehensive testing of Trading Diary HTML application. Will test all core features including form submission, data persistence, analysis features, and responsive design."
