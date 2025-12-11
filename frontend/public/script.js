@@ -1049,11 +1049,6 @@ function updateUI() {
     profitPill.className = `stat-pill ${totalProfit >= 0 ? 'positive' : 'negative'}`;
     
     document.getElementById('totalTrades').textContent = `${trades.length} trades`;
-    
-    // Re-inicializar ícones
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
 }
 
 // ============================================
