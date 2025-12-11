@@ -235,14 +235,27 @@
                 </div>
                 <h1>Trade<span>Diary</span></h1>
             </div>
-            <div class="header-stats" id="headerStats">
-                <div class="stat-pill positive">
-                    <svg class="icon"><use href="#icon-arrow-up-right"/></svg>
-                    <span id="totalProfit">R$ 0,00</span>
+            <div class="header-actions">
+                <div class="sync-buttons">
+                    <button class="sync-btn" id="exportBtn" title="Exportar dados">
+                        <svg class="icon"><use href="#icon-download"/></svg>
+                        <span>Exportar</span>
+                    </button>
+                    <button class="sync-btn" id="importBtn" title="Importar dados">
+                        <svg class="icon"><use href="#icon-upload"/></svg>
+                        <span>Importar</span>
+                    </button>
+                    <input type="file" id="importFile" accept=".json" style="display: none;">
                 </div>
-                <div class="stat-pill">
-                    <svg class="icon"><use href="#icon-activity"/></svg>
-                    <span id="totalTrades">0 trades</span>
+                <div class="header-stats" id="headerStats">
+                    <div class="stat-pill positive">
+                        <svg class="icon"><use href="#icon-arrow-up-right"/></svg>
+                        <span id="totalProfit">R$ 0,00</span>
+                    </div>
+                    <div class="stat-pill">
+                        <svg class="icon"><use href="#icon-activity"/></svg>
+                        <span id="totalTrades">0 trades</span>
+                    </div>
                 </div>
             </div>
         </div>
