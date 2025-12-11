@@ -110,6 +110,13 @@ function setupEventListeners() {
     document.getElementById('deleteModal').addEventListener('click', (e) => {
         if (e.target.id === 'deleteModal') closeDeleteModal();
     });
+    
+    // Botões de Exportar/Importar
+    document.getElementById('exportBtn').addEventListener('click', exportData);
+    document.getElementById('importBtn').addEventListener('click', () => {
+        document.getElementById('importFile').click();
+    });
+    document.getElementById('importFile').addEventListener('change', importData);
 }
 
 // ============================================
