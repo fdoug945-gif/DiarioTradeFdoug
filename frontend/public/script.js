@@ -320,9 +320,6 @@ function renderHistory() {
     document.getElementById('tradesTable').classList.toggle('hidden', !hasData || currentView !== 'table');
     
     if (!hasData) {
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
         return;
     }
     
