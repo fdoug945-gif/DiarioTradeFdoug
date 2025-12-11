@@ -196,6 +196,47 @@ body::before {
     background-clip: text;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.sync-buttons {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.sync-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.sync-btn .icon {
+    width: 16px;
+    height: 16px;
+}
+
+.sync-btn:hover {
+    background: var(--surface-hover);
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+}
+
+.sync-btn:active {
+    transform: scale(0.97);
+}
+
 .header-stats {
     display: flex;
     gap: var(--space-sm);
