@@ -549,9 +549,6 @@ function renderAnalysis() {
         document.querySelectorAll('.stats-grid, .analysis-section').forEach(el => {
             el.style.display = 'none';
         });
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
         return;
     }
     
@@ -577,11 +574,6 @@ function renderAnalysis() {
     
     // Gerar insights
     renderInsights(stats);
-    
-    // Re-inicializar ícones
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
 }
 
 /**
