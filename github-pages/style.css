@@ -1517,6 +1517,17 @@ select option {
         gap: var(--space-md);
     }
     
+    .header-actions {
+        width: 100%;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .sync-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+    
     .header-stats {
         width: 100%;
         justify-content: center;
