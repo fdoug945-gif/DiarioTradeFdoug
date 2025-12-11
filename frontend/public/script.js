@@ -32,11 +32,6 @@ const reasonLabels = {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar Lucide Icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-    
     // Carregar trades do LocalStorage
     loadTrades();
     
