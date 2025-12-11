@@ -166,10 +166,20 @@ body::before {
     box-shadow: var(--shadow-glow-primary);
 }
 
-.logo-icon svg {
+.logo-icon svg,
+.logo-icon .icon {
     width: 22px;
     height: 22px;
     color: white;
+}
+
+/* Global Icon Styles */
+.icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
 }
 
 .logo h1 {
