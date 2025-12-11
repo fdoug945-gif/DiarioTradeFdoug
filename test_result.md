@@ -122,15 +122,18 @@ frontend:
 
   - task: "History Tab - Trade Cards and Table View"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/public/index.html"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
         - working: "NA"
           agent: "testing"
           comment: "Initial testing required - trade display, view switching, filtering, edit/delete functionality"
+        - working: true
+          agent: "testing"
+          comment: "✅ PASSED - History functionality working: trades display correctly in card format, view toggle between cards/table works, asset and result filters functional, edit button redirects to form with data loaded, delete modal appears and cancels properly. Empty state shows when no trades."
 
   - task: "Analysis Tab - Statistics and Insights"
     implemented: true
