@@ -494,18 +494,13 @@ function editTrade(id) {
     // Configurar estado de edição
     editingId = id;
     document.getElementById('editingId').value = id;
-    document.getElementById('submitBtn').innerHTML = '<i data-lucide="check"></i> Atualizar Operação';
+    document.getElementById('submitBtn').innerHTML = '<svg class="icon"><use href="#icon-check"/></svg> Atualizar Operação';
     
     // Ir para aba de registro
     switchTab('register');
     
     // Scroll para o topo
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    // Re-inicializar ícones
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
 }
 
 /**
