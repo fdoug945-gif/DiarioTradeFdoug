@@ -962,7 +962,7 @@ function renderInsights(stats) {
         container.innerHTML = `
             <div class="insight-card">
                 <div class="insight-icon">
-                    <i data-lucide="info"></i>
+                    <svg class="icon"><use href="#icon-info"/></svg>
                 </div>
                 <div class="insight-content">
                     <h4>Coletando dados...</h4>
@@ -974,7 +974,7 @@ function renderInsights(stats) {
         container.innerHTML = insights.map(insight => `
             <div class="insight-card">
                 <div class="insight-icon ${insight.type}">
-                    <i data-lucide="${insight.icon}"></i>
+                    <svg class="icon"><use href="#icon-${insight.icon}"/></svg>
                 </div>
                 <div class="insight-content">
                     <h4>${insight.title}</h4>
