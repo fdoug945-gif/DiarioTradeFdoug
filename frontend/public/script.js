@@ -258,15 +258,10 @@ function resetForm() {
     
     // Resetar estado de edição
     editingId = null;
-    document.getElementById('submitBtn').innerHTML = '<i data-lucide="save"></i> Salvar Operação';
+    document.getElementById('submitBtn').innerHTML = '<svg class="icon"><use href="#icon-save"/></svg> Salvar Operação';
     
     // Definir nova data/hora
     setDefaultDateTime();
-    
-    // Re-inicializar ícones
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
 }
 
 // ============================================
