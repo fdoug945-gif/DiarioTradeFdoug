@@ -262,7 +262,8 @@ body::before {
     transition: color var(--transition-fast);
 }
 
-.tab-btn svg {
+.tab-btn svg,
+.tab-btn .icon {
     width: 18px;
     height: 18px;
 }
