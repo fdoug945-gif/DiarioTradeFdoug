@@ -388,24 +388,20 @@ function renderTradeCards(filteredTrades) {
             
             <div class="trade-card-footer">
                 <div class="trade-date">
-                    <i data-lucide="calendar"></i>
+                    <svg class="icon"><use href="#icon-calendar"/></svg>
                     ${formatDate(trade.date)} às ${trade.time}
                 </div>
                 <div class="trade-actions">
                     <button class="action-btn" onclick="editTrade('${trade.id}')" title="Editar">
-                        <i data-lucide="edit-2"></i>
+                        <svg class="icon"><use href="#icon-edit-2"/></svg>
                     </button>
                     <button class="action-btn delete" onclick="openDeleteModal('${trade.id}')" title="Excluir">
-                        <i data-lucide="trash-2"></i>
+                        <svg class="icon"><use href="#icon-trash"/></svg>
                     </button>
                 </div>
             </div>
         </div>
     `).join('');
-    
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
 }
 
 /**
