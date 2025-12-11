@@ -8,22 +8,227 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- SVG Icons Definitions -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+            <polyline points="16 7 22 7 22 13"></polyline>
+        </symbol>
+        <symbol id="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+        </symbol>
+        <symbol id="icon-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </symbol>
+        <symbol id="icon-plus-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+        </symbol>
+        <symbol id="icon-history" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+            <path d="M3 3v5h5"></path>
+            <path d="M12 7v5l4 2"></path>
+        </symbol>
+        <symbol id="icon-bar-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="20" x2="12" y2="10"></line>
+            <line x1="18" y1="20" x2="18" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="16"></line>
+        </symbol>
+        <symbol id="icon-arrow-left-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="17 11 21 7 17 3"></polyline>
+            <line x1="21" y1="7" x2="9" y2="7"></line>
+            <polyline points="7 21 3 17 7 13"></polyline>
+            <line x1="15" y1="17" x2="3" y2="17"></line>
+        </symbol>
+        <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </symbol>
+        <symbol id="icon-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="8" r="6"></circle>
+            <path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path>
+            <path d="M7 6h1v4"></path>
+            <path d="m16.71 13.88.7.71-2.82 2.82"></path>
+        </symbol>
+        <symbol id="icon-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+        </symbol>
+        <symbol id="icon-calculator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+            <line x1="8" y1="6" x2="16" y2="6"></line>
+            <line x1="16" y1="14" x2="16" y2="18"></line>
+            <line x1="8" y1="10" x2="8" y2="10.01"></line>
+            <line x1="12" y1="10" x2="12" y2="10.01"></line>
+            <line x1="16" y1="10" x2="16" y2="10.01"></line>
+            <line x1="8" y1="14" x2="8" y2="14.01"></line>
+            <line x1="12" y1="14" x2="12" y2="14.01"></line>
+            <line x1="8" y1="18" x2="8" y2="18.01"></line>
+            <line x1="12" y1="18" x2="12" y2="18.01"></line>
+        </symbol>
+        <symbol id="icon-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </symbol>
+        <symbol id="icon-lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
+            <path d="M9 18h6"></path>
+            <path d="M10 22h4"></path>
+        </symbol>
+        <symbol id="icon-x-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="15" y1="9" x2="9" y2="15"></line>
+            <line x1="9" y1="9" x2="15" y2="15"></line>
+        </symbol>
+        <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="6"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+        </symbol>
+        <symbol id="icon-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 2v6h-6"></path>
+            <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+            <path d="M3 22v-6h6"></path>
+            <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+        </symbol>
+        <symbol id="icon-move-diagonal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="13 5 19 5 19 11"></polyline>
+            <polyline points="11 19 5 19 5 13"></polyline>
+            <line x1="19" y1="5" x2="5" y2="19"></line>
+        </symbol>
+        <symbol id="icon-newspaper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+            <path d="M18 14h-8"></path>
+            <path d="M15 18h-5"></path>
+            <path d="M10 6h8v4h-8V6Z"></path>
+        </symbol>
+        <symbol id="icon-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+        </symbol>
+        <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+        </symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+        </symbol>
+        <symbol id="icon-save" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+            <polyline points="7 3 7 8 15 8"></polyline>
+        </symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </symbol>
+        <symbol id="icon-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </symbol>
+        <symbol id="icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+        </symbol>
+        <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </symbol>
+        <symbol id="icon-edit-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+        </symbol>
+        <symbol id="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        </symbol>
+        <symbol id="icon-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
+            <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+        </symbol>
+        <symbol id="icon-trending-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
+            <polyline points="16 17 22 17 22 11"></polyline>
+        </symbol>
+        <symbol id="icon-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+            <path d="M7 21h10"></path>
+            <path d="M12 3v18"></path>
+            <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+        </symbol>
+        <symbol id="icon-pie-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+        </symbol>
+        <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+            <path d="M5 3v4"></path>
+            <path d="M19 17v4"></path>
+            <path d="M3 5h4"></path>
+            <path d="M17 19h4"></path>
+        </symbol>
+        <symbol id="icon-alert-triangle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </symbol>
+        <symbol id="icon-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </symbol>
+        <symbol id="icon-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+            <path d="M4 22h16"></path>
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+        </symbol>
+        <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </symbol>
+        <symbol id="icon-alert-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </symbol>
+        <symbol id="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </symbol>
+    </svg>
+
     <!-- Header -->
     <header class="header">
         <div class="header-content">
             <div class="logo">
                 <div class="logo-icon">
-                    <i data-lucide="trending-up"></i>
+                    <svg class="icon"><use href="#icon-trending-up"/></svg>
                 </div>
                 <h1>Trade<span>Diary</span></h1>
             </div>
             <div class="header-stats" id="headerStats">
                 <div class="stat-pill positive">
-                    <i data-lucide="arrow-up-right"></i>
+                    <svg class="icon"><use href="#icon-arrow-up-right"/></svg>
                     <span id="totalProfit">R$ 0,00</span>
                 </div>
                 <div class="stat-pill">
-                    <i data-lucide="activity"></i>
+                    <svg class="icon"><use href="#icon-activity"/></svg>
                     <span id="totalTrades">0 trades</span>
                 </div>
             </div>
@@ -34,19 +239,18 @@
     <nav class="nav-tabs">
         <div class="tabs-container">
             <button class="tab-btn active" data-tab="register">
-                <i data-lucide="plus-circle"></i>
+                <svg class="icon"><use href="#icon-plus-circle"/></svg>
                 <span>Operações</span>
             </button>
             <button class="tab-btn" data-tab="history">
-                <i data-lucide="history"></i>
+                <svg class="icon"><use href="#icon-history"/></svg>
                 <span>Histórico</span>
             </button>
             <button class="tab-btn" data-tab="analysis">
-                <i data-lucide="bar-chart-3"></i>
+                <svg class="icon"><use href="#icon-bar-chart"/></svg>
                 <span>Análise</span>
             </button>
         </div>
-        <div class="tab-indicator"></div>
     </nav>
 
     <!-- Main Content -->
@@ -64,7 +268,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="operationType">
-                            <i data-lucide="arrow-left-right"></i>
+                            <svg class="icon"><use href="#icon-arrow-left-right"/></svg>
                             Tipo de Operação
                         </label>
                         <div class="select-wrapper">
@@ -73,13 +277,13 @@
                                 <option value="compra">🟢 Compra (Long)</option>
                                 <option value="venda">🔴 Venda (Short)</option>
                             </select>
-                            <i data-lucide="chevron-down" class="select-icon"></i>
+                            <svg class="icon select-icon"><use href="#icon-chevron-down"/></svg>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="asset">
-                            <i data-lucide="coins"></i>
+                            <svg class="icon"><use href="#icon-coins"/></svg>
                             Par/Ativo
                         </label>
                         <div class="select-wrapper">
@@ -92,7 +296,7 @@
                                 <option value="BTCUSD">BTC/USD</option>
                                 <option value="outro">Outro...</option>
                             </select>
-                            <i data-lucide="chevron-down" class="select-icon"></i>
+                            <svg class="icon select-icon"><use href="#icon-chevron-down"/></svg>
                         </div>
                     </div>
                 </div>
@@ -100,7 +304,7 @@
                 <!-- Campo Personalizado para Outro Ativo -->
                 <div class="form-group hidden" id="customAssetGroup">
                     <label for="customAsset">
-                        <i data-lucide="edit-3"></i>
+                        <svg class="icon"><use href="#icon-edit"/></svg>
                         Ativo Personalizado
                     </label>
                     <input type="text" id="customAsset" placeholder="Digite o nome do ativo">
@@ -109,7 +313,7 @@
                 <!-- Números da Operação -->
                 <div class="form-section">
                     <h3 class="form-section-title">
-                        <i data-lucide="calculator"></i>
+                        <svg class="icon"><use href="#icon-calculator"/></svg>
                         Detalhes da Operação
                     </h3>
                     
@@ -139,7 +343,7 @@
                 <!-- Resultado -->
                 <div class="form-group result-group">
                     <label for="result">
-                        <i data-lucide="dollar-sign"></i>
+                        <svg class="icon"><use href="#icon-dollar"/></svg>
                         Resultado (R$)
                     </label>
                     <input type="number" id="result" step="0.01" placeholder="Ex: 150.00 ou -50.00" required>
@@ -149,33 +353,33 @@
                 <!-- Motivo da Entrada -->
                 <div class="form-section">
                     <h3 class="form-section-title">
-                        <i data-lucide="lightbulb"></i>
+                        <svg class="icon"><use href="#icon-lightbulb"/></svg>
                         Motivo da Entrada
                     </h3>
                     
                     <div class="toggle-group" id="reasonToggles">
                         <button type="button" class="toggle-btn" data-reason="rejeicao">
-                            <i data-lucide="x-circle"></i>
+                            <svg class="icon"><use href="#icon-x-circle"/></svg>
                             Rejeição do preço
                         </button>
                         <button type="button" class="toggle-btn" data-reason="toque">
-                            <i data-lucide="target"></i>
+                            <svg class="icon"><use href="#icon-target"/></svg>
                             Toque na região
                         </button>
                         <button type="button" class="toggle-btn" data-reason="rompimento">
-                            <i data-lucide="trending-up"></i>
+                            <svg class="icon"><use href="#icon-trending-up"/></svg>
                             Rompimento
                         </button>
                         <button type="button" class="toggle-btn" data-reason="reversao">
-                            <i data-lucide="refresh-cw"></i>
+                            <svg class="icon"><use href="#icon-refresh"/></svg>
                             Reversão
                         </button>
                         <button type="button" class="toggle-btn" data-reason="tendencia">
-                            <i data-lucide="move-diagonal"></i>
+                            <svg class="icon"><use href="#icon-move-diagonal"/></svg>
                             Seguir tendência
                         </button>
                         <button type="button" class="toggle-btn" data-reason="noticia">
-                            <i data-lucide="newspaper"></i>
+                            <svg class="icon"><use href="#icon-newspaper"/></svg>
                             Notícia/Evento
                         </button>
                     </div>
@@ -184,7 +388,7 @@
                 <!-- Descrição -->
                 <div class="form-group">
                     <label for="description">
-                        <i data-lucide="file-text"></i>
+                        <svg class="icon"><use href="#icon-file-text"/></svg>
                         Descrição Adicional (opcional)
                     </label>
                     <textarea id="description" rows="3" placeholder="Descreva sua análise, observações ou aprendizados desta operação..."></textarea>
@@ -194,14 +398,14 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="tradeDate">
-                            <i data-lucide="calendar"></i>
+                            <svg class="icon"><use href="#icon-calendar"/></svg>
                             Data
                         </label>
                         <input type="date" id="tradeDate" required>
                     </div>
                     <div class="form-group">
                         <label for="tradeTime">
-                            <i data-lucide="clock"></i>
+                            <svg class="icon"><use href="#icon-clock"/></svg>
                             Hora
                         </label>
                         <input type="time" id="tradeTime" required>
@@ -210,7 +414,7 @@
                 
                 <!-- Botão Submit -->
                 <button type="submit" class="btn-primary" id="submitBtn">
-                    <i data-lucide="save"></i>
+                    <svg class="icon"><use href="#icon-save"/></svg>
                     Salvar Operação
                 </button>
                 
@@ -243,10 +447,10 @@
                 </div>
                 <div class="view-toggle">
                     <button class="view-btn active" data-view="cards" title="Visualização em cards">
-                        <i data-lucide="layout-grid"></i>
+                        <svg class="icon"><use href="#icon-grid"/></svg>
                     </button>
                     <button class="view-btn" data-view="table" title="Visualização em tabela">
-                        <i data-lucide="list"></i>
+                        <svg class="icon"><use href="#icon-list"/></svg>
                     </button>
                 </div>
             </div>
@@ -279,7 +483,7 @@
             <!-- Empty State -->
             <div class="empty-state hidden" id="emptyHistory">
                 <div class="empty-icon">
-                    <i data-lucide="inbox"></i>
+                    <svg class="icon"><use href="#icon-inbox"/></svg>
                 </div>
                 <h3>Nenhuma operação registrada</h3>
                 <p>Comece registrando sua primeira operação na aba "Operações"</p>
@@ -297,7 +501,7 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-card-header">
-                        <i data-lucide="target"></i>
+                        <svg class="icon"><use href="#icon-target"/></svg>
                         <span>Taxa de Acerto</span>
                     </div>
                     <div class="stat-value" id="winRate">0%</div>
@@ -308,7 +512,7 @@
                 
                 <div class="stat-card positive">
                     <div class="stat-card-header">
-                        <i data-lucide="trending-up"></i>
+                        <svg class="icon"><use href="#icon-trending-up"/></svg>
                         <span>Média de Ganho</span>
                     </div>
                     <div class="stat-value" id="avgWin">R$ 0,00</div>
@@ -317,7 +521,7 @@
                 
                 <div class="stat-card negative">
                     <div class="stat-card-header">
-                        <i data-lucide="trending-down"></i>
+                        <svg class="icon"><use href="#icon-trending-down"/></svg>
                         <span>Média de Perda</span>
                     </div>
                     <div class="stat-value" id="avgLoss">R$ 0,00</div>
@@ -326,7 +530,7 @@
                 
                 <div class="stat-card">
                     <div class="stat-card-header">
-                        <i data-lucide="scale"></i>
+                        <svg class="icon"><use href="#icon-scale"/></svg>
                         <span>Fator de Lucro</span>
                     </div>
                     <div class="stat-value" id="profitFactor">0.00</div>
@@ -337,7 +541,7 @@
             <!-- Best/Worst Assets -->
             <div class="analysis-section">
                 <h3 class="section-title">
-                    <i data-lucide="bar-chart-2"></i>
+                    <svg class="icon"><use href="#icon-bar-chart"/></svg>
                     Desempenho por Ativo
                 </h3>
                 
@@ -349,7 +553,7 @@
             <!-- Reasons Analysis -->
             <div class="analysis-section">
                 <h3 class="section-title">
-                    <i data-lucide="pie-chart"></i>
+                    <svg class="icon"><use href="#icon-pie-chart"/></svg>
                     Análise por Motivo de Entrada
                 </h3>
                 
@@ -361,7 +565,7 @@
             <!-- AI Insights -->
             <div class="analysis-section insights-section">
                 <h3 class="section-title">
-                    <i data-lucide="sparkles"></i>
+                    <svg class="icon"><use href="#icon-sparkles"/></svg>
                     Insights Inteligentes
                 </h3>
                 
@@ -373,7 +577,7 @@
             <!-- Time Analysis -->
             <div class="analysis-section">
                 <h3 class="section-title">
-                    <i data-lucide="clock"></i>
+                    <svg class="icon"><use href="#icon-clock"/></svg>
                     Análise por Horário
                 </h3>
                 
@@ -385,7 +589,7 @@
             <!-- Empty State -->
             <div class="empty-state hidden" id="emptyAnalysis">
                 <div class="empty-icon">
-                    <i data-lucide="bar-chart"></i>
+                    <svg class="icon"><use href="#icon-bar-chart"/></svg>
                 </div>
                 <h3>Dados insuficientes</h3>
                 <p>Registre pelo menos 3 operações para ver análises e insights</p>
@@ -395,7 +599,7 @@
     
     <!-- Toast Notification -->
     <div class="toast" id="toast">
-        <i data-lucide="check-circle" class="toast-icon"></i>
+        <svg class="icon toast-icon"><use href="#icon-check-circle"/></svg>
         <span class="toast-message">Operação salva com sucesso!</span>
     </div>
     
@@ -403,7 +607,7 @@
     <div class="modal-overlay" id="deleteModal">
         <div class="modal">
             <div class="modal-icon">
-                <i data-lucide="alert-triangle"></i>
+                <svg class="icon"><use href="#icon-alert-triangle"/></svg>
             </div>
             <h3>Excluir Operação</h3>
             <p>Tem certeza que deseja excluir esta operação? Esta ação não pode ser desfeita.</p>
