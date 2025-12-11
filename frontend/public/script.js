@@ -110,6 +110,13 @@ function setupEventListeners() {
     document.getElementById('deleteModal').addEventListener('click', (e) => {
         if (e.target.id === 'deleteModal') closeDeleteModal();
     });
+    
+    // Botões de Exportar/Importar
+    document.getElementById('exportBtn').addEventListener('click', exportData);
+    document.getElementById('importBtn').addEventListener('click', () => {
+        document.getElementById('importFile').click();
+    });
+    document.getElementById('importFile').addEventListener('change', importData);
 }
 
 // ============================================
@@ -1049,6 +1056,106 @@ function updateUI() {
     profitPill.className = `stat-pill ${totalProfit >= 0 ? 'positive' : 'negative'}`;
     
     document.getElementById('totalTrades').textContent = `${trades.length} trades`;
+}
+
+// ============================================
+// EXPORTAR E IMPORTAR DADOS
+// ============================================
+
+/**
+ * Exporta todos os trades para um arquivo JSON
+ */
+function exportData() {
+    if (trades.length === 0) {
+        showToast('Não há dados para exportar', 'error');
+        return;
+    }
+    
+    const dataToExport = {
+        version: '1.0',
+        exportedAt: new Date().toISOString(),
+        trades: trades
+    };
+    
+    const jsonString = JSON.stringify(dataToExport, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `diario-trade-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    showToast(`${trades.length} operações exportadas com sucesso!`, 'success');
+}
+
+/**
+ * Importa trades de um arquivo JSON
+ */
+function importData(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result);
+            
+            // Verificar se é um arquivo válido
+            if (!data.trades || !Array.isArray(data.trades)) {
+                showToast('Arquivo inválido. Formato não reconhecido.', 'error');
+                return;
+            }
+            
+            // Perguntar se quer mesclar ou substituir
+            const existingCount = trades.length;
+            const importCount = data.trades.length;
+            
+            if (existingCount > 0) {
+                const action = confirm(
+                    `Você tem ${existingCount} operações salvas.\n\n` +
+                    `Importar ${importCount} operações.\n\n` +
+                    `Clique OK para MESCLAR (adicionar às existentes)\n` +
+                    `Clique Cancelar para SUBSTITUIR (apagar as existentes)`
+                );
+                
+                if (action) {
+                    // Mesclar: adicionar trades que não existem
+                    const existingIds = new Set(trades.map(t => t.id));
+                    const newTrades = data.trades.filter(t => !existingIds.has(t.id));
+                    trades = [...trades, ...newTrades];
+                    showToast(`${newTrades.length} novas operações importadas!`, 'success');
+                } else {
+                    // Substituir
+                    trades = data.trades;
+                    showToast(`${importCount} operações importadas (substituídas)!`, 'success');
+                }
+            } else {
+                // Não tem dados, só importar
+                trades = data.trades;
+                showToast(`${importCount} operações importadas com sucesso!`, 'success');
+            }
+            
+            // Salvar e atualizar
+            saveTrades();
+            updateUI();
+            renderHistory();
+            renderAnalysis();
+            
+        } catch (error) {
+            console.error('Erro ao importar:', error);
+            showToast('Erro ao ler o arquivo. Verifique se é um JSON válido.', 'error');
+        }
+    };
+    
+    reader.readAsText(file);
+    
+    // Limpar o input para permitir reimportar o mesmo arquivo
+    event.target.value = '';
 }
 
 // ============================================

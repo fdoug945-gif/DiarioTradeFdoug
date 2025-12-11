@@ -211,6 +211,19 @@
             <line x1="12" y1="16" x2="12" y2="12"></line>
             <line x1="12" y1="8" x2="12.01" y2="8"></line>
         </symbol>
+        <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </symbol>
+        <symbol id="icon-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+        </symbol>
+        <symbol id="icon-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+        </symbol>
     </svg>
 
     <!-- Header -->
@@ -222,14 +235,27 @@
                 </div>
                 <h1>Trade<span>Diary</span></h1>
             </div>
-            <div class="header-stats" id="headerStats">
-                <div class="stat-pill positive">
-                    <svg class="icon"><use href="#icon-arrow-up-right"/></svg>
-                    <span id="totalProfit">R$ 0,00</span>
+            <div class="header-actions">
+                <div class="sync-buttons">
+                    <button class="sync-btn" id="exportBtn" title="Exportar dados">
+                        <svg class="icon"><use href="#icon-download"/></svg>
+                        <span>Exportar</span>
+                    </button>
+                    <button class="sync-btn" id="importBtn" title="Importar dados">
+                        <svg class="icon"><use href="#icon-upload"/></svg>
+                        <span>Importar</span>
+                    </button>
+                    <input type="file" id="importFile" accept=".json" style="display: none;">
                 </div>
-                <div class="stat-pill">
-                    <svg class="icon"><use href="#icon-activity"/></svg>
-                    <span id="totalTrades">0 trades</span>
+                <div class="header-stats" id="headerStats">
+                    <div class="stat-pill positive">
+                        <svg class="icon"><use href="#icon-arrow-up-right"/></svg>
+                        <span id="totalProfit">R$ 0,00</span>
+                    </div>
+                    <div class="stat-pill">
+                        <svg class="icon"><use href="#icon-activity"/></svg>
+                        <span id="totalTrades">0 trades</span>
+                    </div>
                 </div>
             </div>
         </div>
