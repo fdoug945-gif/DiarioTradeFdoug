@@ -1,152 +1,421 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Emergent | Fullstack App</title>
-        <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-        <a
-            id="emergent-badge"
-            target="_blank"
-            href="https://app.emergent.sh/?utm_source=emergent-badge"
-            style="
-                display: flex !important;
-                align-items: center !important;
-                position: fixed !important;
-                bottom: 20px;
-                right: 20px;
-                text-decoration: none;
-                padding: 6px 10px;
-                font-family: -apple-system, BlinkMacSystemFont,
-                    &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell,
-                    &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;,
-                    sans-serif !important;
-                font-size: 12px !important;
-                z-index: 9999 !important;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-                border-radius: 8px !important;
-                background-color: #ffffff !important;
-                border: 1px solid rgba(255, 255, 255, 0.25) !important;
-            "
-        >
-            <div
-                style="display: flex; flex-direction: row; align-items: center"
-            >
-                <img
-                    style="width: 20px; height: 20px; margin-right: 8px"
-                    src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4"
-                />
-                <p
-                    style="
-                        color: #000000;
-                        font-family: -apple-system, BlinkMacSystemFont,
-                            &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu,
-                            Cantarell, &quot;Open Sans&quot;,
-                            &quot;Helvetica Neue&quot;, sans-serif !important;
-                        font-size: 12px !important;
-                        align-items: center;
-                        margin-bottom: 0;
-                    "
-                >
-                    Made with Emergent
-                </p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diário de Trade - Registre e analise suas operações de trading">
+    <title>Diário de Trade</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i data-lucide="trending-up"></i>
+                </div>
+                <h1>Trade<span>Diary</span></h1>
             </div>
-        </a>
-        <script>
-            !(function (t, e) {
-                var o, n, p, r;
-                e.__SV ||
-                    ((window.posthog = e),
-                    (e._i = []),
-                    (e.init = function (i, s, a) {
-                        function g(t, e) {
-                            var o = e.split(".");
-                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                                (t[e] = function () {
-                                    t.push(
-                                        [e].concat(
-                                            Array.prototype.slice.call(
-                                                arguments,
-                                                0,
-                                            ),
-                                        ),
-                                    );
-                                });
-                        }
-                        ((p = t.createElement("script")).type =
-                            "text/javascript"),
-                            (p.crossOrigin = "anonymous"),
-                            (p.async = !0),
-                            (p.src =
-                                s.api_host.replace(
-                                    ".i.posthog.com",
-                                    "-assets.i.posthog.com",
-                                ) + "/static/array.js"),
-                            (r =
-                                t.getElementsByTagName(
-                                    "script",
-                                )[0]).parentNode.insertBefore(p, r);
-                        var u = e;
-                        for (
-                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                                u.people = u.people || [],
-                                u.toString = function (t) {
-                                    var e = "posthog";
-                                    return (
-                                        "posthog" !== a && (e += "." + a),
-                                        t || (e += " (stub)"),
-                                        e
-                                    );
-                                },
-                                u.people.toString = function () {
-                                    return u.toString(1) + ".people (stub)";
-                                },
-                                o =
-                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
-                                        " ",
-                                    ),
-                                n = 0;
-                            n < o.length;
-                            n++
-                        )
-                            g(u, o[n]);
-                        e._i.push([i, s, a]);
-                    }),
-                    (e.__SV = 1));
-            })(document, window.posthog || []);
-            posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
-                api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-            });
-        </script>
-    </body>
+            <div class="header-stats" id="headerStats">
+                <div class="stat-pill positive">
+                    <i data-lucide="arrow-up-right"></i>
+                    <span id="totalProfit">R$ 0,00</span>
+                </div>
+                <div class="stat-pill">
+                    <i data-lucide="activity"></i>
+                    <span id="totalTrades">0 trades</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <div class="tabs-container">
+            <button class="tab-btn active" data-tab="register">
+                <i data-lucide="plus-circle"></i>
+                <span>Operações</span>
+            </button>
+            <button class="tab-btn" data-tab="history">
+                <i data-lucide="history"></i>
+                <span>Histórico</span>
+            </button>
+            <button class="tab-btn" data-tab="analysis">
+                <i data-lucide="bar-chart-3"></i>
+                <span>Análise</span>
+            </button>
+        </div>
+        <div class="tab-indicator"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Tab: Registrar Operação -->
+        <section class="tab-content active" id="register">
+            <div class="section-header">
+                <h2>Registrar Operação</h2>
+                <p>Preencha os detalhes da sua operação</p>
+            </div>
+            
+            <form id="tradeForm" class="trade-form">
+                <!-- Tipo e Par -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="operationType">
+                            <i data-lucide="arrow-left-right"></i>
+                            Tipo de Operação
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="operationType" required>
+                                <option value="">Selecione...</option>
+                                <option value="compra">🟢 Compra (Long)</option>
+                                <option value="venda">🔴 Venda (Short)</option>
+                            </select>
+                            <i data-lucide="chevron-down" class="select-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asset">
+                            <i data-lucide="coins"></i>
+                            Par/Ativo
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="asset" required>
+                                <option value="">Selecione...</option>
+                                <option value="EURUSD">EUR/USD</option>
+                                <option value="GBPUSD">GBP/USD</option>
+                                <option value="USDJPY">USD/JPY</option>
+                                <option value="AUDUSD">AUD/USD</option>
+                                <option value="BTCUSD">BTC/USD</option>
+                                <option value="outro">Outro...</option>
+                            </select>
+                            <i data-lucide="chevron-down" class="select-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Campo Personalizado para Outro Ativo -->
+                <div class="form-group hidden" id="customAssetGroup">
+                    <label for="customAsset">
+                        <i data-lucide="edit-3"></i>
+                        Ativo Personalizado
+                    </label>
+                    <input type="text" id="customAsset" placeholder="Digite o nome do ativo">
+                </div>
+                
+                <!-- Números da Operação -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i data-lucide="calculator"></i>
+                        Detalhes da Operação
+                    </h3>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="lots">Lotes</label>
+                            <input type="number" id="lots" step="0.01" min="0.01" placeholder="0.01" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="entryPrice">Preço de Entrada</label>
+                            <input type="number" id="entryPrice" step="0.00001" placeholder="1.08500" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="stopLoss">Stop Loss</label>
+                            <input type="number" id="stopLoss" step="0.00001" placeholder="1.08200" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="takeProfit">Take Profit</label>
+                            <input type="number" id="takeProfit" step="0.00001" placeholder="1.09000" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resultado -->
+                <div class="form-group result-group">
+                    <label for="result">
+                        <i data-lucide="dollar-sign"></i>
+                        Resultado (R$)
+                    </label>
+                    <input type="number" id="result" step="0.01" placeholder="Ex: 150.00 ou -50.00" required>
+                    <span class="input-hint">Use valores negativos para prejuízo</span>
+                </div>
+                
+                <!-- Motivo da Entrada -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i data-lucide="lightbulb"></i>
+                        Motivo da Entrada
+                    </h3>
+                    
+                    <div class="toggle-group" id="reasonToggles">
+                        <button type="button" class="toggle-btn" data-reason="rejeicao">
+                            <i data-lucide="x-circle"></i>
+                            Rejeição do preço
+                        </button>
+                        <button type="button" class="toggle-btn" data-reason="toque">
+                            <i data-lucide="target"></i>
+                            Toque na região
+                        </button>
+                        <button type="button" class="toggle-btn" data-reason="rompimento">
+                            <i data-lucide="trending-up"></i>
+                            Rompimento
+                        </button>
+                        <button type="button" class="toggle-btn" data-reason="reversao">
+                            <i data-lucide="refresh-cw"></i>
+                            Reversão
+                        </button>
+                        <button type="button" class="toggle-btn" data-reason="tendencia">
+                            <i data-lucide="move-diagonal"></i>
+                            Seguir tendência
+                        </button>
+                        <button type="button" class="toggle-btn" data-reason="noticia">
+                            <i data-lucide="newspaper"></i>
+                            Notícia/Evento
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Descrição -->
+                <div class="form-group">
+                    <label for="description">
+                        <i data-lucide="file-text"></i>
+                        Descrição Adicional (opcional)
+                    </label>
+                    <textarea id="description" rows="3" placeholder="Descreva sua análise, observações ou aprendizados desta operação..."></textarea>
+                </div>
+                
+                <!-- Data e Hora -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tradeDate">
+                            <i data-lucide="calendar"></i>
+                            Data
+                        </label>
+                        <input type="date" id="tradeDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tradeTime">
+                            <i data-lucide="clock"></i>
+                            Hora
+                        </label>
+                        <input type="time" id="tradeTime" required>
+                    </div>
+                </div>
+                
+                <!-- Botão Submit -->
+                <button type="submit" class="btn-primary" id="submitBtn">
+                    <i data-lucide="save"></i>
+                    Salvar Operação
+                </button>
+                
+                <!-- Hidden field para edição -->
+                <input type="hidden" id="editingId" value="">
+            </form>
+        </section>
+        
+        <!-- Tab: Histórico -->
+        <section class="tab-content" id="history">
+            <div class="section-header">
+                <h2>Histórico de Operações</h2>
+                <p>Todas as suas operações registradas</p>
+            </div>
+            
+            <!-- Filtros -->
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <label>Filtrar por:</label>
+                    <select id="filterAsset">
+                        <option value="all">Todos os ativos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select id="filterResult">
+                        <option value="all">Todos os resultados</option>
+                        <option value="positive">Apenas ganhos</option>
+                        <option value="negative">Apenas perdas</option>
+                    </select>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="cards" title="Visualização em cards">
+                        <i data-lucide="layout-grid"></i>
+                    </button>
+                    <button class="view-btn" data-view="table" title="Visualização em tabela">
+                        <i data-lucide="list"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Cards View -->
+            <div class="trades-container" id="tradesCards">
+                <!-- Cards serão inseridos via JavaScript -->
+            </div>
+            
+            <!-- Table View -->
+            <div class="trades-table-container hidden" id="tradesTable">
+                <table class="trades-table">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Ativo</th>
+                            <th>Tipo</th>
+                            <th>Lotes</th>
+                            <th>Resultado</th>
+                            <th>Motivo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tradesTableBody">
+                        <!-- Rows serão inseridas via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Empty State -->
+            <div class="empty-state hidden" id="emptyHistory">
+                <div class="empty-icon">
+                    <i data-lucide="inbox"></i>
+                </div>
+                <h3>Nenhuma operação registrada</h3>
+                <p>Comece registrando sua primeira operação na aba "Operações"</p>
+            </div>
+        </section>
+        
+        <!-- Tab: Análise -->
+        <section class="tab-content" id="analysis">
+            <div class="section-header">
+                <h2>Análise & Estatísticas</h2>
+                <p>Insights sobre seu desempenho</p>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <i data-lucide="target"></i>
+                        <span>Taxa de Acerto</span>
+                    </div>
+                    <div class="stat-value" id="winRate">0%</div>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" id="winRateBar" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <div class="stat-card positive">
+                    <div class="stat-card-header">
+                        <i data-lucide="trending-up"></i>
+                        <span>Média de Ganho</span>
+                    </div>
+                    <div class="stat-value" id="avgWin">R$ 0,00</div>
+                    <div class="stat-detail" id="totalWins">0 trades positivos</div>
+                </div>
+                
+                <div class="stat-card negative">
+                    <div class="stat-card-header">
+                        <i data-lucide="trending-down"></i>
+                        <span>Média de Perda</span>
+                    </div>
+                    <div class="stat-value" id="avgLoss">R$ 0,00</div>
+                    <div class="stat-detail" id="totalLosses">0 trades negativos</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <i data-lucide="scale"></i>
+                        <span>Fator de Lucro</span>
+                    </div>
+                    <div class="stat-value" id="profitFactor">0.00</div>
+                    <div class="stat-detail">Ganhos / Perdas</div>
+                </div>
+            </div>
+            
+            <!-- Best/Worst Assets -->
+            <div class="analysis-section">
+                <h3 class="section-title">
+                    <i data-lucide="bar-chart-2"></i>
+                    Desempenho por Ativo
+                </h3>
+                
+                <div class="assets-performance" id="assetsPerformance">
+                    <!-- Será preenchido via JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Reasons Analysis -->
+            <div class="analysis-section">
+                <h3 class="section-title">
+                    <i data-lucide="pie-chart"></i>
+                    Análise por Motivo de Entrada
+                </h3>
+                
+                <div class="reasons-analysis" id="reasonsAnalysis">
+                    <!-- Será preenchido via JavaScript -->
+                </div>
+            </div>
+            
+            <!-- AI Insights -->
+            <div class="analysis-section insights-section">
+                <h3 class="section-title">
+                    <i data-lucide="sparkles"></i>
+                    Insights Inteligentes
+                </h3>
+                
+                <div class="insights-container" id="insightsContainer">
+                    <!-- Insights serão gerados via JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Time Analysis -->
+            <div class="analysis-section">
+                <h3 class="section-title">
+                    <i data-lucide="clock"></i>
+                    Análise por Horário
+                </h3>
+                
+                <div class="time-analysis" id="timeAnalysis">
+                    <!-- Será preenchido via JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Empty State -->
+            <div class="empty-state hidden" id="emptyAnalysis">
+                <div class="empty-icon">
+                    <i data-lucide="bar-chart"></i>
+                </div>
+                <h3>Dados insuficientes</h3>
+                <p>Registre pelo menos 3 operações para ver análises e insights</p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i data-lucide="check-circle" class="toast-icon"></i>
+        <span class="toast-message">Operação salva com sucesso!</span>
+    </div>
+    
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal">
+            <div class="modal-icon">
+                <i data-lucide="alert-triangle"></i>
+            </div>
+            <h3>Excluir Operação</h3>
+            <p>Tem certeza que deseja excluir esta operação? Esta ação não pode ser desfeita.</p>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="cancelDelete">Cancelar</button>
+                <button class="btn-danger" id="confirmDelete">Excluir</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
 </html>
